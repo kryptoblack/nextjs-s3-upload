@@ -36,6 +36,7 @@ export default function Page() {
       })
       formData.append('file', file)
 
+      console.log(`uploading to ${fields.key}`);
       const uploadResponse = await fetch(url, {
         method: 'POST',
         body: formData,
