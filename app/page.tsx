@@ -36,14 +36,13 @@ export default function Page() {
       })
       formData.append('file', file)
 
-      console.log(`uploading to ${fields.key}`);
       const uploadResponse = await fetch(url, {
         method: 'POST',
         body: formData,
       })
 
       if (uploadResponse.ok) {
-        alert('Upload successful!')
+        alert(`Upload successful to ${fields.key}!`)
       } else {
         console.error('S3 Upload Error:', uploadResponse)
         alert('Upload failed.')
